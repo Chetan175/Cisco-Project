@@ -1,6 +1,6 @@
 import { validateProfile } from './validate.js';
 import { evaluateEligibility } from './engine.js';
-import { roles } from './data.js';
+import { roles, students } from './data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const evaluateBtn = document.getElementById('evaluate-btn');
@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const countsContainer = document.getElementById('counts-container');
     const resultsContainer = document.getElementById('results-container');
     const resetBtn = document.getElementById('reset-btn');
+    const loadSampleBtn = document.getElementById('load-sample-btn');
     const profileForm = document.getElementById('profile-form');
 
     evaluateBtn.addEventListener('click', () => {
@@ -88,5 +89,14 @@ document.addEventListener('DOMContentLoaded', () => {
         validationMessageEl.style.color = '';
         countsContainer.textContent = '';
         resultsContainer.innerHTML = '';
+    });
+
+    loadSampleBtn.addEventListener('click', () => {
+        const sample = students[0];
+        document.getElementById('branch').value = sample.branch;
+        document.getElementById('cgpa').value = sample.cgpa;
+        document.getElementById('graduationYear').value = sample.graduationYear;
+        document.getElementById('activeBacklogs').value = sample.activeBacklogs;
+        document.getElementById('skills').value = sample.skills.join(', ');
     });
 });

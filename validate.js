@@ -19,14 +19,14 @@ export function validateProfile(profile) {
                 seenLower.add(lower);
                 // Keep original casing for display if needed, 
                 // but it's guaranteed to be unique case-insensitively.
-                uniqueSkills.push(trimmed); 
+                uniqueSkills.push(trimmed);
             }
         }
     }
     normalizedProfile.skills = uniqueSkills;
 
     // --- Validation Logic ---
-    
+
     // Branch validation: Non-blank string (using normalized)
     if (!normalizedProfile.branch || normalizedProfile.branch === '') {
         errors.push('INVALID_BRANCH');
