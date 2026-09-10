@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const validationMessageEl = document.getElementById('validation-message');
     const countsContainer = document.getElementById('counts-container');
     const resultsContainer = document.getElementById('results-container');
+    const resetBtn = document.getElementById('reset-btn');
+    const profileForm = document.getElementById('profile-form');
 
     evaluateBtn.addEventListener('click', () => {
         // Clear old results and counts before each new evaluation
@@ -78,5 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             resultsContainer.appendChild(resultCard);
         });
+    });
+
+    resetBtn.addEventListener('click', () => {
+        profileForm.reset();
+        validationMessageEl.textContent = '';
+        validationMessageEl.style.color = '';
+        countsContainer.textContent = '';
+        resultsContainer.innerHTML = '';
     });
 });
