@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Fair Eligibility Shortlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Career Fair Eligibility Shortlist</h1>
+        
+        <section id="student-profile">
+            <h2>Student Profile</h2>
+            <div id="validation-message" style="margin-bottom: 10px; font-weight: bold;"></div>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="branch">Branch</label>
+                    <select id="branch" name="branch">
+                        <option value="">Select a branch</option>
+                        <option value="CSE">CSE</option>
+                        <option value="IT">IT</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cgpa">CGPA</label>
+                    <input type="number" id="cgpa" name="cgpa" step="0.1" placeholder="e.g. 8.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="graduationYear">Graduation Year</label>
+                    <input type="number" id="graduationYear" name="graduationYear" placeholder="e.g. 2027">
+                </div>
+
+                <div class="form-group">
+                    <label for="activeBacklogs">Active Backlogs</label>
+                    <input type="number" id="activeBacklogs" name="activeBacklogs" placeholder="e.g. 1">
+                </div>
+
+                <div class="form-group">
+                    <label for="skills">Skills</label>
+                    <input type="text" id="skills" name="skills" placeholder="e.g. Git, Python, SQL">
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="evaluate-btn">Evaluate</button>
+                    <button type="button" id="reset-btn">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="results-section">
+            <div id="counts-container" style="margin-bottom: 15px; font-size: 1.1em;"></div>
+            <div id="results-container"></div>
+        </section>
+    </main>
+
+    <script src="ui.js" type="module"></script>
+</body>
+</html>
